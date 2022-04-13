@@ -1,0 +1,8 @@
+This product includes the software developed by third-party:
+
+ * Apache Commons IO: https://github.com/apache/commons-io  (Apache-2.0 License)
+ * Kotlin: https://github.com/JetBrains/kotlin  (Apache-2.0 License)
+ * Kotlinx Coroutines: https://github.com/Kotlin/kotlinx.coroutines  (Apache-2.0 License)
+ * Kotlinx Serialization: https://github.com/Kotlin/kotlinx.serialization  (Apache-2.0 License)
+ * Ktor: https://github.com/ktorio/ktor  (Apache-2.0 License)
+ * Msgpack: https://github.com/msgpack/msgpack-java  (Apache-2.0 License)
