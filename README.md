@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP, Python, C#, and VB.NET are supported.) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
+The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP is supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
 
 ## How it works
 
@@ -40,7 +40,7 @@ You can monitor the scan progress on a progress bar on the lower panel and on th
 ![AI-aiproj](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-aiproj.gif)
 
 * To exclude files and folders from scanning, use the .aiignore file. To create a .aiignore file, go to the `File` menu, select `New`, and then select `Aiignore file`. The file syntax is similar to the .gitignore file. For more information on the syntax, see https://git-scm.com/docs/gitignore.
-You can also use the `SkipGitIgnoreFiles` setting in the configuration file to exclude from scanning files and folders from the .gitignore file. By default, it is enabled.
+  You can also use the `SkipGitIgnoreFiles` setting in the configuration file to exclude from scanning files and folders from the .gitignore file. By default, it is enabled.
 
 **Stopping a scan**
 
@@ -66,13 +66,13 @@ The `[PT AI] Vulnerability details` window contains additional vulnerability inf
 
 The data flow diagrams consist of the following sections:
 
-- **Entry point**. The starting point of the control flow. 
+- **Entry point**. The starting point of the control flow.
 
 - **Data entry point**. A file and a code line with the coordinates of the input data entry.
 
 - **Data changes**. The description of one or several functions that modify potentially malicious input data.
 
-    > ***Note.** There may be no `Data changes` section in the diagram if input data is not modified.*
+  > ***Note.** There may be no `Data changes` section in the diagram if input data is not modified.*
 
 - **Exit point**. The execution line of a potentially vulnerable function. This is the exit point associated with the vulnerability in source code. The exit point coordinates are mapped to the vulnerability in the data flow.
 
@@ -82,11 +82,11 @@ You can go to the corresponding place in the text editor from any section of the
 
 2. An exploit and additional conditions required to exploit a vulnerability.
 
-When you click `Create an exploit request`, an HTTP request is generated automatically. You can use an exploit to test a vulnerability detected in a deployed application. 
-   
-   > ***Note.** To exploit a vulnerability, you must specify a host where your application is deployed in the .aiproj file. Default: localhost.*
+When you click `Create an exploit request`, an HTTP request is generated automatically. You can use an exploit to test a vulnerability detected in a deployed application.
 
-   > ***Note.** This feature is available in commercial versions of a JetBrains IDE.*
+> ***Note.** To exploit a vulnerability, you must specify a host where your application is deployed in the .aiproj file. Default: localhost.*
+
+> ***Note.** This feature is available in commercial versions of a JetBrains IDE.*
 
 ![AI-exploit](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-exploit.gif)
 
@@ -109,9 +109,9 @@ Actions on vulnerabilities:
 * Perform group actions on all vulnerabilities in a file using the `Quick fix` menu button. For example, you can select `Confirm vulnerability` → `Fix all '[PT AI] Scanning' problems` in a file.
 
 
-Several detected vulnerabilities may have the same exit point. Such vulnerabilities will be grouped if they have the same type. They will be displayed as one issue with different ways to exploit them. To view details on such vulnerabilities, go to `[PT AI] Vulnerability details`. 
+Several detected vulnerabilities may have the same exit point. Such vulnerabilities will be grouped if they have the same type. They will be displayed as one issue with different ways to exploit them. To view details on such vulnerabilities, go to `[PT AI] Vulnerability details`.
 
-   > ***Note.** If you confirm one vulnerability from a group, the entire issue will be confirmed. To discard the entire issue, you must discard all vulnerabilities in a group.*
+> ***Note.** If you confirm one vulnerability from a group, the entire issue will be confirmed. To discard the entire issue, you must discard all vulnerabilities in a group.*
 
 ![AI-action](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-action.gif)
 
@@ -125,7 +125,7 @@ When you enable the developer mode, it activates the following functionality:
 ![AI-compare](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-compare.gif)
 
 * Additional tabs for viewing logs in PT Application Inspector. On the `Log` → `Plugin log` tab, you can find the plugin log records. You can also add custom log tabs in the dev_mode_config.json configuration file. By default, dev_mode_config.json contains a path for the analyzer log output.
-To add additional tabs, in the `panelName` field, specify the tab name and, in the `pathsToLogs` field, specify at least one path to a log file to show on the tab.
+  To add additional tabs, in the `panelName` field, specify the tab name and, in the `pathsToLogs` field, specify at least one path to a log file to show on the tab.
 
 Example:
 
@@ -167,16 +167,16 @@ The following settings are located at the `File` → `Settings` → `Tools`�
 ## Requirements
 For the PT AI Application Inspector plugin to work correctly, the following technical requirements must be met:
 
-* JetBrains IDE version 2021.2.1 or later
+* PhpStorm version 2021.2.1 or later
 * 8 GB of RAM
 * 5 GB of free disk space
 
 Supported 64-bit OSs:
 * Debian version 11.1 or later
-* Fedora Workstation version 32 or later
+* Fedora Workstation version 34 or later
 * OpenSUSE version 15.3 or later
-* Ubuntu Desktop version 19.10 or later
-* Windows 10 and Windows Server 2019
+* Ubuntu Desktop version 20.04 or later
+* Windows 10
 
 Supported macOSs:
 * Big Sur version 11.5 or later
