@@ -2,9 +2,19 @@
 
 ## Overview
 
-The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP is supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
+The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP and Java are supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
 
 ## How it works
+
+**Installing the plugin**
+
+To install the plugin:
+1. Go to `File` → `Settings` → `Plugins`.
+2. Click the gear icon and select `Install Plugin from Disk`.
+3. Specify the path to the plugin ZIP archive.
+4. Restart IntelliJ IDEA.
+
+The plugin is now installed.
 
 **Enabling and disabling the plugin**
 
@@ -167,7 +177,7 @@ The following settings are located at the `File` → `Settings` → `Tools`�
 ## Requirements
 For the PT AI Application Inspector plugin to work correctly, the following technical requirements must be met:
 
-* PhpStorm version 2021.2.1 or later
+* JetBrains IDE (PhpStorm, IntelliJ IDEA) version 2022.1 or later
 * 8 GB of RAM
 * 5 GB of free disk space
 
