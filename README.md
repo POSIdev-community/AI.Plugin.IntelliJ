@@ -1,20 +1,21 @@
-# AI.Plugin.IntelliJ
-
 ## Overview
 
-The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP and Java are supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
+The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP, Java, JavaScript, TypeScript are supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
 
 ## How it works
 
-**Installing the plugin**
+<details>
+  <summary><b>Manual installing the plugin</b></summary>
 
-To install the plugin:
-1. Go to `File` → `Settings` → `Plugins`.
-2. Click the gear icon and select `Install Plugin from Disk`.
-3. Specify the path to the plugin ZIP archive.
-4. Restart IntelliJ IDEA.
+    To install the plugin:
+    1. Go to `File` → `Settings` → `Plugins`.
+    2. Click the gear icon and select `Install Plugin from Disk`.
+    3. Specify the path to the plugin ZIP archive.
+    4. Restart IntelliJ IDEA.
 
-The plugin is now installed.
+    The plugin is now installed.
+
+</details>
 
 **Enabling and disabling the plugin**
 
@@ -167,7 +168,7 @@ The following settings are located at the `File` → `Settings` → `Tools`�
 * **Trigger scan**. Select if a scan is started manually or after you save changes in a project. Default: manually.
 * **Automatically enable for any project**. Enable the plugin automatically for all projects without explicit confirmation from a user. Default: disabled.
 * **Use an additional tool window to view information**. Show the additional `[PT AI] Vulnerability details` window for a more convenient vulnerability management.
-* **Allow telemetry collection**. Collect generalized data about scanned code and send it to Positive Technologies. To see a sample of collected data, click [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/master/media/readme/telemetryExample.json). For details, refer to the privacy statement. Default: enabled.
+* **Allow telemetry collection**. Collect generalized data about scanned code and send it to our team. To see a sample of collected data, click [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/master/media/readme/telemetryExample.json). For details, refer to the privacy statement. Default: enabled.
 * **Use all available resources for scanning**. Use all resources for faster scanning. It may negatively impact the performance of your computer. Default: disabled.
 * **Number of days to store log files for**. Limit the number of days to store log files for. Default: 30.
 * **Maximum number of stored log files**. Limit the number of stored log files. Default: 100.
@@ -177,7 +178,7 @@ The following settings are located at the `File` → `Settings` → `Tools`�
 ## Requirements
 For the PT AI Application Inspector plugin to work correctly, the following technical requirements must be met:
 
-* JetBrains IDE (PhpStorm, IntelliJ IDEA) version 2022.1 or later
+* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) version 2022.2.3 or later
 * 8 GB of RAM
 * 5 GB of free disk space
 
@@ -192,12 +193,9 @@ Supported macOSs:
 * Big Sur version 11.5 or later
 * Monterey version 12.0.0 or later
 
-## License
-[EULA](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/master/LICENSE.txt)
-
 ## Privacy statement
 
-By default, the PT Application Inspector plugin collects anonymous usage data and sends it to Positive Technologies to help us understand how to improve the product. Positive Technologies does not pass collected information to third parties. Source code or IP addresses are not collected. You can stop data collection by disabling the `Allow telemetry collection` setting.
+By default, the PT Application Inspector plugin collects anonymous usage data and sends it to our team to help us understand how to improve the product. We do not pass collected information to third parties. Source code or IP addresses are not collected. You can stop data collection by disabling the `Allow telemetry collection` setting.
 
 ---
 **Enjoy!**
