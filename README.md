@@ -1,201 +1,183 @@
 ## Overview
 
-The PT Application Inspector plugin allows finding security vulnerabilities and undocumented functionality in your application code as you write it. (PHP, Java, JavaScript, Python, TypeScript are supported) With the built-in analysis modules, the plugin highlights not only source code vulnerabilities and configuration file flaws but also vulnerable third-party components and libraries used in application development.
+The PT Application Inspector plugin finds vulnerabilities and undocumented features in application code while it is being written (supported languages: PHP, Java, JavaScript, TypeScript, Python). Built-in analysis modules detect source code vulnerabilities, configuration file errors, and vulnerable third-party components and libraries used in the application development process.
 
 ## How it works
 
-<details>
-  <summary><b>Manual installing the plugin</b></summary>
+### Enabling and disabling the plugin
 
-    To install the plugin:
-    1. Go to `File` → `Settings` → `Plugins`.
-    2. Click the gear icon and select `Install Plugin from Disk`.
-    3. Specify the path to the plugin ZIP archive.
-    4. Restart IntelliJ IDEA.
+You can enable or disable the plugin in an open project by clicking the icon in the bottom right toolbar. If it is not the first time you're opening the project, the plugin is enabled automatically (scan and action history is saved). You can also set up the plugin to be automatically enabled when a new project is opened.
 
-    The plugin is now installed.
+When the plugin is enabled, the **.ai** folder is created in the project. This folder contains a database, log files, and a configuration file. For Git to ignore the **.ai** folder, create an empty file `.gitignore` in the project folder.
 
-</details>
+### Installing the code analyzer
 
-**Enabling and disabling the plugin**
+For the plugin to operate correctly, the PT Application Inspector code analyzer is required. There are two ways to install the analyzer:
+* In JetBrains IDE.
+* In the IntelliJ IDEA interface by clicking **Download analyzer** in the pop-up window. In Linux and Windows, unpacking is performed automatically, and in macOS an installer starts.
 
-You can enable or disable PT Application Inspector in a currently open project by clicking the icon in the lower-right toolbar. If it is not the first time the project is open, the plugin will be enabled automatically. (The scan and action history is stored.) You can also configure enabling the plugin automatically when you open a new project.
-
-After you enable the plugin in your project, the .ai folder with the database, logs, and configuration file will be generated in your workspace. To make Git ignore the .ai folder, create an empty .gitignore file in the project folder.
-
-**Installing the code analyzer**
-
-For the plugin to work properly, you must install the PT Application Inspector code analyzer. There are two ways to do it:
-- In a JetBrains IDE.
-- In the settings by clicking `Download analyzer`. Unpacking is done automatically in UNIX systems and Windows, while the macOS starts the installer.
-
-The path where the analyzer is installed:
-- In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
-- In Linux: `~/application-inspector-analyzer`
-- In macOS: `/Library/Application-Inspector-Analyzer`
+The path for code analyzer installation:
+* In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
+* In Linux: `~/application-inspector-analyzer`
+* In macOS:` /Library/Application-Inspector-Analyzer`
 
 ![AI-enable](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-enable.gif)
 
-**Scanning a project**
+### Scanning a project
 
-You can start a project scan:
+You can start a project scan in the following ways:
+* by clicking **Scan project**
+* by clicking **Full scan project**
+* when saving project changes (if you selected **On saving** for the **Trigger scan**parameter)
 
-* By clicking `Scan project`
-* By clicking `Full scan project`
-* By saving changes in a project (if you select `On saving` for the `Trigger scan` setting)
+You can monitor the scan progress in the bottom panel and on the **Scan log** tab in the **PT Application Inspector** panel. The first scan usually takes longer due to the initial load on the database of vulnerable components.
 
-You can monitor the scan progress on a progress bar on the lower panel and on the PT Application Inspector panel on the `Scan log` tab. The first scan can take a while because of the initial load on the database of vulnerable components.
+Scan is performed based on the default settings. You can change these settings in the `aiproj.json` configuration file. To create the `aiproj.json` file, in the **File** menu, select **New** → **Aiproj file**.
 
-* Scanning is performed based on the default settings. You can change them in the aiproj.json file. To create an .aiproj file, go to the `File` menu, select `New`, and then select `Aiproj file`.
+To exclude files and folders from scanning, use the `.aiignore` file. To create the `.aiignore` file, in the **File** menu, select **New** → **Aiignore file**. The syntax of this file is similar to the `.gitignore` syntax. For more information, see [git-scm.com/docs/gitignore](git-scm.com/docs/gitignore). You can also use the **SkipGitIgnoreFiles** setting in the `aiproj.json` file to exclude from scanning files and folders from the `.gitignore` file. By default, this setting is enabled.
 
 ![AI-aiproj](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-aiproj.gif)
 
-* To exclude files and folders from scanning, use the .aiignore file. To create a .aiignore file, go to the `File` menu, select `New`, and then select `Aiignore file`. The file syntax is similar to the .gitignore file. For more information on the syntax, see https://git-scm.com/docs/gitignore.
-  You can also use the `SkipGitIgnoreFiles` setting in the configuration file to exclude from scanning files and folders from the .gitignore file. By default, it is enabled.
+### Stopping a scan
 
-**Stopping a scan**
-
-You can stop a project scan:
-
-* By clicking `Stop scan`
-
-* By closing the progress bar
+To stop a project scan, click **Stop scan** in the **PT Application Inspector** panel or close the progress bar in the bottom toolbar.
 
 ![AI-stop](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-stop.gif)
 
-## Exploring scan results
+## Analyzing scan results
 
-You can view the detected vulnerabilities on the `Detected vulnerabilities` tab in the `PT Application Inspector` window. When you select a vulnerability, a vulnerable piece of code is highlighted in the text editor.
+You can find the list of all detected vulnerabilities on the **Detected vulnerabilities** tab of the **PT Application Inspector** panel. If you click a vulnerability in the list, the line with its exit point gets highlighted in the code editor. If the system detects vulnerabilities that are not included in the code analyzer database, they are marked with the <span class="doc-icon-pt" style="color:#999999;"></span> tag. The second-order vulnerabilities are marked with the <span class="doc-icon-pt" style="color:#999999;">2</span> tag.
 
-You can see the description of the vulnerability in the  `Description` tool window to the right of `PT Application Inspector`.
+The **Description** tab contains the vulnerability description with example attack scripts, vulnerability elimination recommendations, and links to references.
 
-**"[PT AI] Vulnerability details" tool window**
+The **[PT AI] Vulnerability details** panel displays additional information about the vulnerability. The **Data flow** tab contains a data flow diagram that shows how each process converts its input data to output data and how processes interact. The data flow diagram consists of the following sections:
+* **Entry point**. The starting point of the control flow.
+* **Data entry point**. A file and code line with coordinates of data entry.
+* **Data changes**. The description of one or several functions that modify potentially harmful input data. This section may not be displayed on the diagram if input data was not modified.
+* **Exit point**. The execution line of a potentially vulnerable function. This is an exit point related to the vulnerability in the source code.
+* **Best place to fix**. A code line best suited for patching a vulnerability. This section is displayed before the data flow.
 
-The `[PT AI] Vulnerability details` window contains additional vulnerability information (if any):
+You can go to the corresponding place in the code editor from any section of the data-flow diagram.
 
-1. A navigable data flow diagram. It visualizes how each process converts its input into output and how processes interact.
+The **Exploit** tab contains a test HTTP request (exploit) that can be used to exploit the vulnerability in a deployed web application. You can automatically generate an exploit by clicking **Create an exploit request**.
 
-The data flow diagrams consist of the following sections:
+***Note.** To exploit the vulnerability, specify the address of the host where your web application is deployed in the `aiproj.json` file. The default value is "localhost."*
 
-- **Entry point**. The starting point of the control flow.
-
-- **Data entry point**. A file and a code line with the coordinates of the input data entry.
-
-- **Data changes**. The description of one or several functions that modify potentially malicious input data.
-
-  > ***Note.** There may be no `Data changes` section in the diagram if input data is not modified.*
-
-- **Exit point**. The execution line of a potentially vulnerable function. This is the exit point associated with the vulnerability in source code. The exit point coordinates are mapped to the vulnerability in the data flow.
-
-- **Best place to fix**. A code line best suited for patching a vulnerability. The section is displayed above the data flow.
-
-You can go to the corresponding place in the text editor from any section of the data flow diagram.
-
-2. An exploit and additional conditions required to exploit a vulnerability.
-
-When you click `Create an exploit request`, an HTTP request is generated automatically. You can use an exploit to test a vulnerability detected in a deployed application.
-
-> ***Note.** To exploit a vulnerability, you must specify a host where your application is deployed in the .aiproj file. Default: localhost.*
-
-> ***Note.** This feature is available in commercial versions of a JetBrains IDE.*
+***Note.** This feature is available in commercial versions of JetBrains IDE.*
 
 ![AI-exploit](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-exploit.gif)
 
-Some vulnerabilities have additional exploitation conditions. You can find them on the `Additional conditions` tab.
+Some vulnerabilities have additional exploitation conditions displayed on the **Additional conditions** tab.
 
-When you browse through the diagram sections, the vulnerability information is pinned automatically until you move to another vulnerability. Also, if you want work on your code and view information about a particular vulnerability at the same time, you can pin the vulnerability manually.
+When you scroll through the sections of the diagram, the vulnerability information is automatically pinned until you move on to another vulnerability. If you want to view information about a certain vulnerability while working on the code, you can pin this vulnerability manually.
 
-**Managing detected vulnerabilities**
+Several vulnerabilities can have the same exit point. If these vulnerabilities belong to the same type, they are grouped together and displayed as one problem with different exploitation options. You can view detailed information about such vulnerabilities on the **[PT AI] Vulnerability details** panel.
 
-PT Application Inspector has a set of tools to manage detected vulnerabilities. You can change their status, suppress or filter them. For convenient vulnerability management, you can fold and unfold the list of vulnerabilities for all files simultaneously or for each file separately. Suspected vulnerabilities are marked with `?` and second-order vulnerabilities are marked with `1▸2`.
+***Note.** If you confirm one vulnerability from the group, the whole problem will be confirmed automatically. To discard an entire problem, you must discard all the vulnerabilities in the group.*
 
-Actions on vulnerabilities:
+### Managing detected vulnerabilities
 
-* Confirm or discard a vulnerability using the `Quick fix` menu button or on the `[PT AI] Vulnerability details` tab.
-
-* Suppress a vulnerability using the `Quick fix` menu button.
-
-* Filter detected vulnerabilities by severity, status, and `Suppressed` flag.
-
-* Perform group actions on all vulnerabilities in a file using the `Quick fix` menu button. For example, you can select `Confirm vulnerability` → `Fix all '[PT AI] Scanning' problems` in a file.
-
-
-Several detected vulnerabilities may have the same exit point. Such vulnerabilities will be grouped if they have the same type. They will be displayed as one issue with different ways to exploit them. To view details on such vulnerabilities, go to `[PT AI] Vulnerability details`.
-
-> ***Note.** If you confirm one vulnerability from a group, the entire issue will be confirmed. To discard the entire issue, you must discard all vulnerabilities in a group.*
+The PT Application Inspector plugin contains a set of tools for managing detected vulnerabilities. With these tools, you can do the following:
+* Filter vulnerabilities by severity, status, and exclusion from scan results by clicking the eye button.
+* Confirm, discard, and exclude vulnerabilities from scan results in their context menu in the code editor.
+* Confirm and discard vulnerabilities by clicking the X and checkmark buttons on the **[PT AI]****Vulnerability details** panel.
+* Perform group actions on all vulnerabilities in the file. For example, in the context menu of a vulnerability, select **Confirm vulnerability** → **Fix all '[PT AI] Scanning' problems**.
 
 ![AI-action](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-action.gif)
 
+### Developer mode
 
-**Developer mode**
-
-When you enable the developer mode, it activates the following functionality:
-
-* Comparing two scan results within a project. To compare results, on the `Scan history` page, right-click the first result and, on the menu, select `Compare with`, then click the second result.
+With the developer mode enabled, the **PT Application Inspector** panel displays additional tabs:
+* **Scan history**. Compares two scan results within a single project. To compare the results, in the context menu of the first scan, select **Compare with**, and then select the second scan.
+* **Log**. Displays log entries of the code analyzer **(Log** → **Analyzer**) and of the plugin (**Log** → **Plugin log**). In the `dev_mode_config.json` configuration file, you can configure user log tabs display. By default, the file contains the path to output the analyzer log. To add extra tabs, in the **panelName** field, enter the tab name, and in the **pathsToLogs** field, enter at least one path to the log file that will be displayed on the tab.
 
 ![AI-compare](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-compare.gif)
 
-* Additional tabs for viewing logs in PT Application Inspector. On the `Log` → `Plugin log` tab, you can find the plugin log records. You can also add custom log tabs in the dev_mode_config.json configuration file. By default, dev_mode_config.json contains a path for the analyzer log output.
-  To add additional tabs, in the `panelName` field, specify the tab name and, in the `pathsToLogs` field, specify at least one path to a log file to show on the tab.
+Example configuration file `dev_mode_config.json`:
 
-Example:
-
-```JSON
+```
 {
-    "logPanels": [
-        {
-            "panelName": "analyzer",
-            "pathsToLogs": [
-                "analyzer.log"
-            ]
-        },
-        {
-            "panelName": "test",
-            "pathsToLogs": [
-                "Configuration/error.log",
-                "process.log"
-            ]
-        }
-    ]
+  "logPanels": [
+    {
+      "panelName": "analyzer",
+      "pathsToLogs": [
+        "analyzer.log"
+      ]
+    },
+    {
+      "panelName": "test",
+      "pathsToLogs": [
+        "Configuration/error.log",
+        "process.log"
+      ]
+    }
+  ]
 }
 ```
 
-### Settings
+## Integration with PT AI Enterprise Edition
 
-The following settings are located at the `File` → `Settings` → `Tools` → `PT Application Inspector` path:
+The PT Application Inspector plugin can be integrated with PT AI Enterprise Edition. The integration allows all team members to work with the source code from different environments, which makes the development process more secure.
 
-* **Analyzer log level**. An analyzer log level. Default: error.
-* **Trigger scan**. Select if a scan is started manually or after you save changes in a project. Default: manually.
-* **Automatically enable for any project**. Enable the plugin automatically for all projects without explicit confirmation from a user. Default: disabled.
-* **Use an additional tool window to view information**. Show the additional `[PT AI] Vulnerability details` window for a more convenient vulnerability management.
-* **Allow telemetry collection**. Collect generalized data about scanned code and send it to our team. To see a sample of collected data, click [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/master/media/readme/telemetryExample.json). For details, refer to the privacy statement. Default: enabled.
-* **Use all available resources for scanning**. Use all resources for faster scanning. It may negatively impact the performance of your computer. Default: disabled.
-* **Number of days to store log files for**. Limit the number of days to store log files for. Default: 30.
-* **Maximum number of stored log files**. Limit the number of stored log files. Default: 100.
-* **Developer mode**. Enable the extended functionality.
-* **Limit scan history to**. Limit the number of stored scan results. Stored scan results are displayed in the scan history. The setting is available only if you enabled the developer mode. If the limit is exceeded, every new scan result deletes the oldest scan result. If you reduce the limit, all extra results will be deleted and cannot be restored. Default: 10.
+To configure the integration:
+
+1. In the main menu of IntelliJ IDEA, click **Tools** → **PT Application Inspector** → **Connect to AI Server**.
+
+1. In the **Server address** field, specify the PT AI Enterprise Server address and click **Connect**.
+
+   ![Connecting to PT AI Enterprise Server](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-connect.gif)
+1. Sign in using the SSO system you set up.
+
+1. Synchronize a local project in IntelliJ IDEA and a project in PT AI Enterprise Server in one of the following ways:
+
+* upload a local project to PT AI Enterprise Server
+
+![Upload a local project](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-upload-to-server.gif)
+* download a project from PT AI Enterprise Server to a local file system
+
+![Download a project from PT AI Enterprise Server](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-download-from-server.gif)
+* connect a local project to an existing project in PT AI Enterprise Server
+
+![Synchronizing projects](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-map-project.gif)
+
+The statuses of detected vulnerabilities are synchronized automatically, and all the team members can assess the current threat level.
+
+For more information about integration, see the PT AI Enterprise Edition User Guide.
+
+## Plugin settings
+
+To configure the plugin settings, select **File** → **Settings** → **Tools** → **PT Application Inspector**.
+
+The plugin configuration page contains the following settings:
+* **Analyzer log level**. The severity level starting from which the code analyzer events will be logged. The default value is "error."
+* **Trigger scan**. The start scan condition: manually on clicking start or automatically on a project file change. The default value is "manually."
+* **Automatically enable for any project**. Silent activation of the plugin when opening a project. By default, the setting is disabled.
+* **Use an additional tool window to view information**. Displays the **Data flow**,**Exploit**, and **Additional condition** tabs in the separate panel **[PT AI] Vulnerability details**. By default, the setting is disabled.
+* **Allow telemetry collection**. Collection of general scan information to be sent to PT AI Enterprise Edition. By default, the setting is enabled. An example of the collected data can be viewed [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/master/media/readme/telemetryExample.json). For more information, see the privacy statement.
+* **Use all available resources for scanning**. Using all available RAM and CPU resources to increase scanning speed. By default, the setting is disabled.
+* **Number of days to store log files**. The number of days log files are stored. The default value is "30."
+* **Maximum number of stored log files**. The number of stored log files. The default value is "100."
+* **Developer mode**. Advanced plugin features. By default, the setting is disabled.
+* **Limit scan history to**. The maximum number of scan results saved in the history. The default value is "10." If the limit is exceeded, each new scan result deletes the oldest result. This setting is available only in the developer mode.
 
 ## Requirements
-For the PT AI Application Inspector plugin to work correctly, the following technical requirements must be met:
 
-* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm, PyCharm) version 2022.2.3 or later
-* 8 GB of RAM
-* 5 GB of free disk space
+For the correct operation of the PT Application Inspector plugin, the following technical requirements must be met:
+* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) 2022.2.3 or later
+* 8 GB RAM
+* 5 GB of free hard drive space
 
-Supported 64-bit OSs:
-* Debian version 11.1 or later
-* Fedora Workstation version 34 or later
-* OpenSUSE version 15.3 or later
-* Ubuntu Desktop version 20.04 or later
+Supported 64-bit OS:
+* Debian 11.1 or later
+* Fedora Workstation 34 or later
+* OpenSUSE 15.3 or later
+* Ubuntu Desktop 20.04 or later
 * Windows 10
 
-Supported macOSs:
-* Big Sur version 11.5 or later
-* Monterey version 12.0.0 or later
+Supported macOS:
+* Big Sur 11.5 or later
+* Monterey 12.0.0 or later
 
 ## Privacy statement
 
-By default, the PT Application Inspector plugin collects anonymous usage data and sends it to our team to help us understand how to improve the product. We do not pass collected information to third parties. Source code or IP addresses are not collected. You can stop data collection by disabling the `Allow telemetry collection` setting.
-
----
-**Enjoy!**
+By default, the PT Application Inspector plugin collects anonymous usage data and sends it to our experts so that they can better understand how to improve the product. We do not share the collected information with third parties. We do not collect source code or IP addresses. To disable data collection, disable the **Allow telemetry collection** setting.
