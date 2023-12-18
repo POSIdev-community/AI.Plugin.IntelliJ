@@ -17,9 +17,9 @@ For the plugin to operate correctly, the PT Application Inspector code analyzer 
 * In the IntelliJ IDEA interface by clicking **Download analyzer** in the pop-up window. In Linux and Windows, unpacking is performed automatically, whereas in macOS an installer starts.
 
 The path for code analyzer installation:
-* In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
-* In Linux: `~/application-inspector-analyzer`
-* In macOS:` /Library/Application-Inspector-Analyzer`
+* In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
+* In Linux: `~/application-inspector-analyzer`
+* In macOS: `/Library/Application-Inspector-Analyzer`
 
 ![AI-enable](https://raw.githubusercontent.com/POSIdev-community/AI.Plugin.IntelliJ/master/media/readme/AI-enable.gif)
 
@@ -176,6 +176,7 @@ Supported 64-bit OS:
 * Ubuntu 22.04 LTS or later
 * Ubuntu 23.04 or later
 * Windows 10
+* ALT Linux OS in the test mode
 
 Supported macOS:
 * Big Sur 11.5 or later

@@ -1,3 +1,14 @@
+## [2.1.0]
+
+- The new Intellij IDEA interface is now supported
+- For the Precheck scanning stage, the Feeds processing step is now displayed
+- The Scan History tab is now displayed not only in developer mode
+- Improved the design of pop-up notifications about the code analyzer
+- Data is now stored using SQLite instead of LiteDB
+- For languages that have a main scan module (Java, JavaScript/TypeScript, PHP and Python), the PM Taint core is no longer used
+- Optimized the scanning process
+- ALT Linux OS is now supported in the test mode
+
 ## [2.0.1]
 
 - PT AI 4.5.0 API support added
