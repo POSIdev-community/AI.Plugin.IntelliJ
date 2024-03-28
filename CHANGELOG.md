@@ -1,3 +1,12 @@
+## [2.2.0]
+
+- In version 2.2.0, you can scan applications written in several languages. When creating a project, PT Application Inspector plugin analyzes extensions of project files with source code and automatically identifies their languages. If necessary, you can change languages manually.
+- Added support for the Ruby language and its scan engine.
+- Added support for the Go language and its scan engine.
+- Added the JSA.Net scan engine that allows scanning C# projects in Windows and Linux.
+- Replaced the scan engine for Java projects. This fixed issues with dependency loading and improved search for vulnerabilities.
+- Improved the calculation mechanism for the RAM allocated to the processor cores during local scanning if the Use all available resources setting is disabled in the plugins. Improved stability of scan results.
+
 ## [2.1.0]
 
 - The new Intellij IDEA interface is now supported
