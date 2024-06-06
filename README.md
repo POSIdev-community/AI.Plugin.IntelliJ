@@ -18,11 +18,11 @@ To manually install the code analyzer:
 
 1. Download the archive with the analyzer using one of the links:
 
-   * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.2.0.33588/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.0.33588.zip)
+   * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.2.1.35411/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.1.35411.zip)
 
-   * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.2.0.33588/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.0.33588.tar.gz)
+   * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.2.1.35411/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.1.35411.tar.gz)
 
-   * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.2.0.33588/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.0.33588.pkg)
+   * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.2.1.35411/download/AI.INFRASTRUCTURE.INSTALLATOR.2.2.1.35411.pkg)
 
 1. In macOS, run the installation file and follow the instructions. In Windows and Linux, unpack the archive to one of the following locations:
 
@@ -30,7 +30,7 @@ To manually install the code analyzer:
 
    * In Linux: `~/application-inspector-analyzer`
 
-![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-enable.gif?raw=true)
+![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-enable.gif?raw=true)
 
 ### Scanning a project
 
@@ -45,13 +45,13 @@ Scans are performed based on the default settings. You can change these settings
 
 To exclude files or folders from scanning, use the `.aiignore` file. To create the `.aiignore` file, in the **File** menu, select **New** → **Aiignore File**. The syntax of this file is similar to the `.gitignore` syntax. For more information, see [git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore). You can also use the **SkipGitIgnoreFiles** setting in the `.aiproj.json` file to exclude from scanning files and folders from the `.gitignore` file. By default, this setting is enabled.
 
-![AI-aiproj](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-aiproj.gif?raw=true)
+![AI-aiproj](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-aiproj.gif?raw=true)
 
 ### Stopping a scan
 
 To stop scanning a project, click **Stop Scan** in the **PT Application Inspector** panel or close the progress bar in the bottom toolbar.
 
-![AI-stop](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-stop.gif?raw=true)
+![AI-stop](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-stop.gif?raw=true)
 
 ## Analyzing scan results
 
@@ -74,7 +74,7 @@ The **Exploit** tab contains a test HTTP request (exploit) that can be used to e
 
 ***Note**. This feature is available in commercial versions of JetBrains IDE.*
 
-![AI-exploit](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-exploit.gif?raw=true)
+![AI-exploit](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-exploit.gif?raw=true)
 
 Some vulnerabilities have additional exploitation conditions displayed in the **Additional Conditions** tab.
 
@@ -92,13 +92,13 @@ The PT Application Inspector plugin contains a set of tools for managing detecte
 * Confirm and discard vulnerabilities by clicking **Confirm** and **Discard** in the **[PT AI] Vulnerability Details** panel.
 * Perform group actions on all vulnerabilities in the file. For example, in the context menu of a vulnerability, select **Confirm vulnerability** → **Fix all 'Vulnerable Code' problems in file**.
 
-![AI-action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-action.gif?raw=true)
+![AI-action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-action.gif?raw=true)
 
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
 
-![AI-compare](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-compare.gif?raw=true)
+![AI-compare](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-compare.gif?raw=true)
 
 ### Developer mode
 
@@ -138,7 +138,7 @@ To configure the integration:
 
 1. In the **Address** field, specify the PT AI Enterprise Server address and click **Connect**.
 
-   ![Connecting to PT AI Enterprise Server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-connect.gif?raw=true)
+   ![Connecting to PT AI Enterprise Server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-connect.gif?raw=true)
 
 2. Sign in using the SSO system you set up.
 
@@ -146,15 +146,15 @@ To configure the integration:
 
    Upload the local project to PT AI Enterprise Server
 
-   ![Upload a local project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-upload-to-server.gif?raw=true)
+   ![Upload a local project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-upload-to-server.gif?raw=true)
 
    Download a project from PT AI Enterprise Server to a local file system
 
-   ![Download a project from PT AI Enterprise Server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-download-from-server.gif?raw=true)
+   ![Download a project from PT AI Enterprise Server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-download-from-server.gif?raw=true)
 
    Connect a local project to an existing project in PT AI Enterprise Server
 
-   ![Synchronizing projects](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/AI-map-project.gif?raw=true)
+   ![Synchronizing projects](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/AI-map-project.gif?raw=true)
 
 The statuses of detected vulnerabilities are synchronized automatically, and all the team members can assess the current threat level.
 
@@ -169,7 +169,7 @@ The plugin configuration page contains the following settings:
 * **Trigger scan**. The start scan condition: manually on clicking Start or automatically when a project file is changed. The default value is "Manually."
 * **Automatically enable for any project**. Silent activation of the plugin when opening a project. By default, the setting is disabled.
 * **Use an additional tool window to view information**. Displays the **Data Flow**, **Exploit**, and **Additional Conditions** tabs in the separate panel **[PT AI] Vulnerability Details**. By default, the setting is enabled.
-* **Allow telemetry collection**. Collection of general scan information to be sent to PT AI Enterprise Edition. By default, the setting is enabled. An example of collected data can be viewed [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.0/media/readme/telemetryExample.json). For more information, see the privacy statement.
+* **Allow telemetry collection**. Collection of general scan information to be sent to PT AI Enterprise Edition. By default, the setting is enabled. An example of collected data can be viewed [here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.2.1/media/readme/telemetryExample.json). For more information, see the privacy statement.
 * **Use all available resources**. The use of all available RAM and CPU resources to increase scanning speed. By default, this setting is disabled.
 * **Number of scan history results to store**. The maximum number of scan results saved in the history. The default value is "No limit." If the limit is exceeded, each new scan result deletes the oldest result.
 * **Number of days to store log files for**. The default value is "30."
