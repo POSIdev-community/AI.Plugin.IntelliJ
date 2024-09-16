@@ -1,3 +1,10 @@
+## [2.2.2]
+
+To help users sort out a large number of vulnerabilities detected during project scanning, the Assistant function has been added to the plugin.
+Assistant helps with the following:
+- Suggests vulnerabilities to be confirmed or discarded
+- Groups similar vulnerabilities and offers to confirm or discard the entire group
+
 ## [2.2.1]
 
 - For static analysis of JavaScript and TypeScript applications, you can now use separate scan modules: Taint and JSA. You can manually select one of them or both by aiproj file.
