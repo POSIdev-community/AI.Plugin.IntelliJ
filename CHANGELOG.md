@@ -1,3 +1,8 @@
+## [2.3.0]
+
+- PT AI 4.8.0 API support added.
+- Minor bugfix
+
 ## [2.2.2]
 
 To help users sort out a large number of vulnerabilities detected during project scanning, the Assistant function has been added to the plugin.
