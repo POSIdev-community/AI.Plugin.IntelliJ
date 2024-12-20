@@ -1,3 +1,10 @@
+## [2.4.0]
+
+New ways to integrate with PT AI Enterprise Edition have been added. Now you can do the following:
+- Run a local project scan in PT AI Enterprise Server with or without saving the results on the server.
+- Send the source code of a project to PT AI Enterprise Server without running a scan
+- Synchronize scan results between the plugin and the PT AI server
+
 ## [2.3.1]
 
 - Added the Solidity programming language. You can enable code analysis for this language in the `.aiproj.json` file.
