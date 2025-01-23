@@ -114,7 +114,7 @@ If a large number of vulnerabilities is detected during project scanning, you ca
 ![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/assistant_overview.gif?raw=true)
 You can start the assistant from the pop-up notification that appears when the scan is completed or by clicking the **Assistant** button and choose to go through the whole scenario or only certain steps.
 
-![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/assistant_action.gif?raw=true
+![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/assistant_action.gif?raw=true)
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
