@@ -18,11 +18,11 @@ To manually install the code analyzer:
 
 1. Download the archive with the analyzer using one of the links:
 
-    * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.4.2.46330/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.2.46330.zip)
+    * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.zip)
 
-    * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.4.2.46330/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.2.46330.tar.gz)
+    * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.tar.gz)
 
-    * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.4.2.46330/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.2.46330.pkg)
+    * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.pkg)
 
 1. In macOS, run the following command to remove the `com.apple.quarantine` attribute:
     ```bash
@@ -100,6 +100,7 @@ The PT Application Inspector plugin contains a set of tools for managing detecte
 * Confirm, discard, and suppress vulnerabilities in their context menu in the code editor.
 * Confirm and discard vulnerabilities by clicking **Confirm** and **Discard** in the **[PT AI] Vulnerability Details** panel.
 * Perform group actions on all vulnerabilities in the file. For example, in the context menu of a vulnerability, select **Confirm Vulnerability** → **Fix all 'Vulnerable Code' problems in file**.
+* Manage the statuses of several vulnerabilities by selecting them in the **Detected Vulnerabilities** tab and changing the status using the corresponding button.
 
 ![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-action.gif?raw=true)
 
@@ -112,9 +113,11 @@ If a large number of vulnerabilities is detected during project scanning, you ca
 * Review vulnerability statuses assigned manually by the user
 
 ![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/assistant_overview.gif?raw=true)
+
 You can start the assistant from the pop-up notification that appears when the scan is completed or by clicking the **Assistant** button and choose to go through the whole scenario or only certain steps.
 
 ![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/assistant_action.gif?raw=true)
+
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
@@ -205,7 +208,7 @@ The plugin configuration page contains the following sections of settings.
 ## Requirements
 
 For the correct operation of the PT Application Inspector plugin, the following technical requirements must be met:
-* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) 2023.1 or later
+* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) 2024.1 or later
 * 8 GB RAM
 * 5 GB of free hard drive space
 
