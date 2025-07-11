@@ -18,11 +18,11 @@ To manually install the code analyzer:
 
 1. Download the archive with the analyzer using one of the links:
 
-    * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.4.0.43980/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.0.43980.zip)
+    * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.zip)
 
-    * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.4.0.43980/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.0.43980.tar.gz)
+    * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.tar.gz)
 
-    * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.4.0.43980/download/AI.INFRASTRUCTURE.INSTALLATOR.2.4.0.43980.pkg)
+    * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.5.0.48236/download/AI.INFRASTRUCTURE.INSTALLATOR.2.5.0.48236.pkg)
 
 1. In macOS, run the following command to remove the `com.apple.quarantine` attribute:
     ```bash
@@ -37,7 +37,7 @@ To manually install the code analyzer:
 
    * In Linux: `~/application-inspector-analyzer`
 
-![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-enable.gif?raw=true)
+![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-enable.gif?raw=true)
 
 ### Scanning a project
 
@@ -52,13 +52,13 @@ Scans are performed based on the default settings. You can change these settings
 
 To exclude files or folders from scanning, use the `.aiignore` file. To create the `.aiignore` file, in the **File** menu, select **New** → **Aiignore File**. The syntax of this file is similar to the `.gitignore` syntax. For more information, see [git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore). You can also use the **SkipGitIgnoreFiles** setting in the `.aiproj.json` file to exclude from scanning files and folders from the `.gitignore` file. By default, this setting is enabled.
 
-![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-aiproj.gif?raw=true)
+![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-aiproj.gif?raw=true)
 
 ### Stopping a scan
 
 To stop scanning a project, click **Stop Scan** in the **PT Application Inspector** panel or close the scan progress bar in the bottom toolbar.
 
-![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-stop.gif?raw=true)
+![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-stop.gif?raw=true)
 
 ## Analyzing scan results
 
@@ -83,7 +83,7 @@ The **Exploit** tab contains a test HTTP request (exploit) that can be used to e
 
 ***Note.** This feature is available in commercial versions of JetBrains IDE.*
 
-![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-exploit.gif?raw=true)
+![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-exploit.gif?raw=true)
 
 Some vulnerabilities have additional exploitation conditions displayed on the **Additional Conditions** tab.
 
@@ -100,8 +100,9 @@ The PT Application Inspector plugin contains a set of tools for managing detecte
 * Confirm, discard, and suppress vulnerabilities in their context menu in the code editor.
 * Confirm and discard vulnerabilities by clicking **Confirm** and **Discard** in the **[PT AI] Vulnerability Details** panel.
 * Perform group actions on all vulnerabilities in the file. For example, in the context menu of a vulnerability, select **Confirm Vulnerability** → **Fix all 'Vulnerable Code' problems in file**.
+* Manage the statuses of several vulnerabilities by selecting them in the **Detected Vulnerabilities** tab and changing the status using the corresponding button.
 
-![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-action.gif?raw=true)
+![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-action.gif?raw=true)
 
 ### Using the assistant
 
@@ -111,15 +112,17 @@ If a large number of vulnerabilities is detected during project scanning, you ca
 * Confirm or discard a group of vulnerabilities similar in type or vulnerable code
 * Review vulnerability statuses assigned manually by the user
 
-![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/assistant_overview.gif?raw=true)
+![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/assistant_overview.gif?raw=true)
+
 You can start the assistant from the pop-up notification that appears when the scan is completed or by clicking the **Assistant** button and choose to go through the whole scenario or only certain steps.
 
-![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/assistant_action.gif?raw=true)
+![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/assistant_action.gif?raw=true)
+
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
 
-![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-compare.gif?raw=true)
+![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-compare.gif?raw=true)
 
 ### Developer mode
 
@@ -158,18 +161,18 @@ To configure the integration:
 1. In the main menu of IntelliJ IDEA, click **Tools** → **PT Application Inspector** → **Connect to PT AI Server**.
 
 1. In the **Address** field, specify the PT AI Enterprise Server address and click **Connect**.
-   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-connect.gif?raw=true)
+   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-connect.gif?raw=true)
 
 1. Sign in to PT AI Enterprise Edition using the SSO system you set up.
 
 1. Perform the required integration scenario:
    * Upload the source code to PT AI Enterprise Server.
-     ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-create-project.gif?raw=true)
+     ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-create-project.gif?raw=true)
    * Send a local project for scanning to PT AI Enterprise Server with or without saving the results on the server.
-     ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-remote-scan.gif?raw=true)
+     ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-remote-scan.gif?raw=true)
    * Synchronize the results of the local scan and the scan in PT AI Enterprise Server.
      For more information about the integration, see the PT AI Enterprise Edition User Guide.
-     ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/AI-map-project.gif?raw=true)
+     ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/AI-map-project.gif?raw=true)
 
 ## Plugin settings
 
@@ -182,7 +185,7 @@ The plugin configuration page contains the following sections of settings.
 * **Trigger scan**. Start scan condition: manually on clicking a start button or automatically when a project file is changed. The default value is Manually.
 * **Automatically enable for any project**. Silent activation of the plugin when opening a project. By default, this setting is disabled.
 * **Use an additional tool window to view information**. Displays the **Data Flow**,**Exploit**, and **Additional Conditions** tabs in the separate panel **[PT AI] Vulnerability Details**. By default, this setting is enabled.
-* **Allow telemetry collection**. Collection of general scan information to be sent to PT AI Enterprise Edition. By default, this setting is enabled. [Here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.4.0/media/readme/telemetryExample.json) you will find an example of the data that we collect. For more information, see the privacy statement.
+* **Allow telemetry collection**. Collection of general scan information to be sent to PT AI Enterprise Edition. By default, this setting is enabled. [Here](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.5.0/media/readme/telemetryExample.json) you will find an example of the data that we collect. For more information, see the privacy statement.
 * **Use all available resources**. The use of all available RAM and CPU resources to increase the scanning speed. By default, this setting is disabled.
 * **Number of scan history results to store**. Maximum number of scan results saved in the history. The default value is No limit. If the limit is exceeded, each new scan result deletes the oldest result.
 * **Number of days to store log files for**. The default value is 30.
@@ -205,7 +208,7 @@ The plugin configuration page contains the following sections of settings.
 ## Requirements
 
 For the correct operation of the PT Application Inspector plugin, the following technical requirements must be met:
-* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) 2023.1 or later
+* JetBrains IDE (PhpStorm, IntelliJ IDEA, WebStorm) 2024.1 or later
 * 8 GB RAM
 * 5 GB of free hard drive space
 

@@ -6,3 +6,5 @@ This product includes the software developed by third-party:
  * Kotlinx Serialization: https://github.com/Kotlin/kotlinx.serialization  (Apache-2.0 License)
  * Ktor: https://github.com/ktorio/ktor  (Apache-2.0 License)
  * Msgpack: https://github.com/msgpack/msgpack-java  (Apache-2.0 License)
+ * Oshi: https://github.com/oshi/oshi (MIT License)
+ 

@@ -1,3 +1,23 @@
+## [2.5.0]
+
+- Allow you to manage the statuses of several vulnerabilities by selecting them in the Detected Vulnerabilities tab and changing the status using the corresponding button.
+- Java 21 support
+- JSA.Net core now supports scanning projects in C# version 11.
+- JSA.JavaScript core now supports the React framework.
+- AI.PHP core, previously used to scan PHP projects, has been replaced with JSA.PHP.
+- Fixed the Connection reset by peer error that occurred when scanning Go projects.
+- Fixed a Java project scanning error that occurred when specifying JVM startup parameters.
+- Fixed an issue with dependency loading when scanning Java projects.
+- PT AI 4.11.0 API support.
+
+## [2.4.2]
+
+ - Plugin now allow you to select the SCA analysis module when creating a project on server PT AI.
+ - Vulnerable components and vulnerabilities in components detected by the module and pulled from server PT AI are displayed in the list of vulnerabilities.
+ - Fixed an error in the JSA.Go core that occurred when scanning Go projects.
+ - Fixed an issue that caused the JSA.JVM core to incorrectly complete scanning of files containing a hyphen in the name.
+ - PT AI 4.10.0 API support.
+
 ## [2.4.0]
 
 New ways to integrate with PT AI Enterprise Edition have been added. Now you can do the following:
