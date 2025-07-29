@@ -1,3 +1,11 @@
+## [2.6.0]
+
+- Added limited support for branch management: when synchronizing a local project and PT AI Enterprise Server project, the oldest branch is connected.
+- Added support for scanning of projects in C# version 12 and projects created in .NET version 8.
+- Added support for scanning of .Net projects in macOS.
+- Updated the JSA.JS scan core for macOS.
+- PT AI 5.0.0 API support.
+
 ## [2.5.0]
 
 - Allow you to manage the statuses of several vulnerabilities by selecting them in the Detected Vulnerabilities tab and changing the status using the corresponding button.
