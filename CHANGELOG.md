@@ -1,3 +1,9 @@
+## [2.7.0]
+
+- Added support for scanning of C/C++, Objective-C, and Swift projects.
+- Added the option to generate artificial intelligence recommendations on how to fix detected vulnerabilities. Vulnerability fix examples are available on the How to fix tab.
+- PT AI 5.2.0 API support.
+
 ## [2.6.0]
 
 - Added limited support for branch management: when synchronizing a local project and PT AI Enterprise Server project, the oldest branch is connected.
