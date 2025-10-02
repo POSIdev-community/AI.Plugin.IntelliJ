@@ -1,6 +1,6 @@
 ## Overview
 
-The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, SQL, Solidity, TypeScript, C/C++, Objective-C, and Swift.
+The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, SQL, Solidity, TypeScript, Scala, C/C++, Objective-C, and Swift.
 
 ## How it works
 
@@ -34,9 +34,9 @@ To manually install the code analyzer:
 
 1. In Windows and Linux, unpack the archive to one of the following locations:
 
-   * In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
+    * In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
 
-   * In Linux: `~/application-inspector-analyzer`
+    * In Linux: `~/application-inspector-analyzer`
 
 ![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-enable.gif?raw=true)
 
@@ -72,7 +72,6 @@ The **[PT AI] Vulnerability Details** panel displays additional information abou
 * **Data entry point**. The file and code line with the coordinates of the data entry.
 * **Data changes**. The description of one or several functions that modify potentially harmful input data. This section may not be displayed on the diagram if the input data were not modified.
 * **Exit point**. The execution line of a potentially vulnerable function. This is the exit point related to the vulnerability in the source code.
-* **Best place to fix**. The code line best suited for patching a vulnerability. This section is displayed before the data flow.
 
 You can go to the corresponding place in the code editor from any section of the data-flow diagram.
 
@@ -97,8 +96,8 @@ Several vulnerabilities can have the same exit point. If these vulnerabilities b
 ### Managing detected vulnerabilities
 
 The PT Application Inspector plugin contains a set of tools for managing detected vulnerabilities. With these tools, you can do the following:
-* Filter vulnerabilities by severity, status, and suppression from scan results by clicking the eye button.																						  
-* Confirm and discard vulnerabilities by clicking **Confirm** and **Discard** in the **[PT AI] Vulnerability Details** panel.																															 
+* Filter vulnerabilities by severity, status, and suppression from scan results by clicking the eye button.
+* Confirm and discard vulnerabilities by clicking **Confirm** and **Discard** in the **[PT AI] Vulnerability Details** panel.
 * Confirm, discard, and suppress vulnerabilities in their context menu in the code editor. There you can also perform group actions on all vulnerabilities in the file. For example, in the context menu of a vulnerability, select **Confirm Vulnerability** → **Fix all 'Vulnerable Code' problems in file**.
 * Manage the statuses of several vulnerabilities by selecting them in the **Detected Vulnerabilities** tab and changing the status using the corresponding button.
 
@@ -119,16 +118,18 @@ You can start the assistant from the pop-up notification that appears when the s
 
 The assistant shows AI-driven recommendations on how to fix detected vulnerabilities.
 
+![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
+
 How to get a recommendation:
 
 1. Select a vulnerability on the **Detected vulnerabilities** tab or by clicking **Suggest fix** in the code editor context menu.
-![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
 
 1. Go to the **How to Fix** tab.
 
 1. Click **Create**.
 
 You can apply the suggested fix or generate an alternative option.
+
 ![Assistant AI Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-assistant-copilot-overview.gif?raw=true)
 
 ### Comparing scan results
@@ -152,17 +153,17 @@ To configure the integration:
 
 1. Perform the required integration scenario:
 
-   * Upload the source code to PT AI Enterprise Server.
-     ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-create-project.gif?raw=true)
-	 
-   * Send a local project for scanning to PT AI Enterprise Server with or without saving the results on the server.
-     ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-remote-scan.gif?raw=true)
-	 
-   * Synchronize the results of the local scan and the scan in PT AI Enterprise Server.
-     ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-map-project.gif?raw=true)
-	 
+    * Upload the source code to PT AI Enterprise Server.
+      ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-create-project.gif?raw=true)
+
+    * Send a local project for scanning to PT AI Enterprise Server with or without saving the results on the server.
+      ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-remote-scan.gif?raw=true)
+
+    * Synchronize the results of the local scan and the scan in PT AI Enterprise Server.
+      ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.7.0/media/readme/AI-map-project.gif?raw=true)
+
 For more information about the integration, see the PT AI Enterprise Edition User Guide.
-     
+
 ## Plugin settings
 
 To configure the plugin settings, select **File** → **Settings** → **Tools** → **PT Application Inspector**.
@@ -191,12 +192,12 @@ The plugin configuration page contains the following sections of settings.
 * The number of vulnerabilities to be confirmed or discarded starting from which a notification from the assistant will be displayed. The default value is 5.
 * The number of similar vulnerabilities starting from which a notification from the assistant will be displayed. The default value is 5.
 * **Suggest vulnerability fixes**. Show the **How to Fix** tab with vulnerability fix recommendations. The section contains settings for the YandexGPT network:
-   * Model name
-   * OAuth token for Yandex Cloud
-   * ID of the Yandex Cloud directory for which your account has the `ai.languageModels.user` role
-   * Temperature: a value from 0 to 1, which defines the model response variability (the higher the value, the more unpredictable the query output)
-   * Maximum number of tokens in one recommendation (the number of tokens in the same text may vary between models)
-								 																						 																																			   																												   
+    * Model name
+    * OAuth token for Yandex Cloud
+    * ID of the Yandex Cloud directory for which your account has the `ai.languageModels.user` role
+    * Temperature: a value from 0 to 1, which defines the model response variability (the higher the value, the more unpredictable the query output)
+    * Maximum number of tokens in one recommendation (the number of tokens in the same text may vary between models)
+
 ## Requirements
 
 For the correct operation of the PT Application Inspector plugin, the following technical requirements must be met:
