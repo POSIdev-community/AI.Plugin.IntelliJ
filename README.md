@@ -1,6 +1,7 @@
 ## Overview
 
-The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, SQL, Solidity, TypeScript, Scala, C/C++, Objective-C, and Swift.
+The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, SQL, Solidity, TypeScript, Scala, C/C++, Objective-C, and Swift.  
+**Note.** Scanning of C/C++ and Objective-C projects is not currently supported in macOS.
 
 ## How it works
 
