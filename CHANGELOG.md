@@ -3,6 +3,7 @@
 - Added support for scanning of Scala and Swift projects.
 - Added support for scanning of C/C++ and Objective-C projects in Windows and Linux.
 - Added the option to generate artificial intelligence recommendations on how to fix detected vulnerabilities. Vulnerability fix examples are available on the How to fix tab.
+- New .aiproj schema. Support setting DslRulesRelativePath for languages: Python, Java, PHP, JS, GO.
 - PT AI 5.2.0 API support.
 
 ## [2.6.0]
