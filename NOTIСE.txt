@@ -7,4 +7,4 @@ This product includes the software developed by third-party:
  * Ktor: https://github.com/ktorio/ktor  (Apache-2.0 License)
  * Msgpack: https://github.com/msgpack/msgpack-java  (Apache-2.0 License)
  * Oshi: https://github.com/oshi/oshi (MIT License)
- 
+ * Grpc: https://github.com/grpc/grpc-kotlin (Apache-2.0 License)

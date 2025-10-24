@@ -1,7 +1,15 @@
+## [2.7.0]
+
+- Added support for scanning of Scala and Swift projects.
+- Added support for scanning of C/C++ and Objective-C projects in Windows and Linux.
+- Added the option to generate artificial intelligence recommendations on how to fix detected vulnerabilities. Vulnerability fix examples are available on the How to fix tab.
+- New .aiproj schema. The DslRulesRelativePath setting is supported for the following languages: Python, Java, PHP, JS, and GO.
+- PT AI 5.2.0 API support.
+
 ## [2.6.0]
 
 - Added limited support for branch management: when synchronizing a local project and PT AI Enterprise Server project, the oldest branch is connected.
-- Added support for scanning of projects in C# version 12 and projects created in .NET version 8.
+- Added support for scanning of projects written in C# version 12 and projects created in .NET version 8.
 - Added support for scanning of .Net projects in macOS.
 - Updated the JSA.JS scan core for macOS.
 - PT AI 5.0.0 API support.
@@ -20,11 +28,11 @@
 
 ## [2.4.2]
 
- - Plugin now allow you to select the SCA analysis module when creating a project on server PT AI.
- - Vulnerable components and vulnerabilities in components detected by the module and pulled from server PT AI are displayed in the list of vulnerabilities.
- - Fixed an error in the JSA.Go core that occurred when scanning Go projects.
- - Fixed an issue that caused the JSA.JVM core to incorrectly complete scanning of files containing a hyphen in the name.
- - PT AI 4.10.0 API support.
+- Allow you to select the SCA analysis module when creating a project on server.
+- Vulnerable components and vulnerabilities in components detected by the module and pulled from server are displayed in the list of vulnerabilities.
+- Fixed an error in the JSA.Go core that occurred when scanning Go projects.
+- Fixed an issue that caused the JSA.JVM core to incorrectly complete scanning of files containing a hyphen in the name.
+- PT AI 4.10.0 API support.
 
 ## [2.4.0]
 
