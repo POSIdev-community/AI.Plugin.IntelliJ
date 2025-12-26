@@ -1,3 +1,9 @@
+## [2.8.0]
+- Fixed the error that caused abnormal termination of the plugin process.
+- Fixed the issues related to the Copilot assistant.
+- Fixed some PT AI Enterprise Server integration issues.
+- PT AI 5.3.0 API support.
+
 ## [2.7.0]
 
 - Added support for scanning of Scala and Swift projects.
