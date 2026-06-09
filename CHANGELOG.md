@@ -1,3 +1,6 @@
+## [2.8.1]
+- Fixed the error that caused abnormal termination of the scanning process in large projects.
+
 ## [2.8.0]
 - Fixed the error that caused abnormal termination of the plugin process.
 - Fixed the issues related to the Copilot assistant.
