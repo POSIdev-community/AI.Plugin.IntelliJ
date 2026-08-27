@@ -1,3 +1,6 @@
+## [2.10.0]
+- Added support for PT AI Enterprise Edition API version 6.1.0: the plugin now displays vulnerabilities detected in Dart projects. These vulnerabilities become available after you load the scan results from PT AI Enterprise Server.
+
 ## [2.9.0]
 - Added full support for branches. When you synchronize a local project in the IDE and a project in PT AI Enterprise Server, you can now select a branch (previously, the oldest branch was automatically used). You can also push the source code and scan results to a selected branch, and you can specify a branch when loading code from PT AI Enterprise Server.
 - Added support for PT AI Enterprise Edition API version 6.0.0, including the displaying of vulnerabilities found by the Hardcoded secrets module and 1C-specific vulnerabilities. These vulnerabilities become available after you load the scan results from PT AI Enterprise Server.

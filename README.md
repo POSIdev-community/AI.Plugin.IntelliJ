@@ -2,6 +2,8 @@
 
 The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, Scala, SQL, Solidity, TypeScript, C/C++, Objective-C, and Swift.
 
+The plugin also partially supports 1C and Dart. You cannot start scans for 1C or Dart projects with the plugin, but you can use the plugin to create PT AI Enterprise Server projects in these languages or load scan results for 1C or Dart projects from PT AI Enterprise Server (the plugin will then display vulnerabilities detected in these projects). The "Hardcoded secrets" and "Vulnerable components and their use" modules are also partially supported. You can use the plugin to create PT AI Enterprise Server projects with these modules, or to load scan results for projects with these modules from PT AI Enterprise Server (the plugin will then display vulnerabilities detected by these modules).
+
 ***Note.** The scanning of projects in C/C++ and Objective-C is not supported in macOS.*
 
 ## How it works
@@ -40,7 +42,7 @@ To manually install the code analyzer:
 
     * In Linux: `~/application-inspector-analyzer`
 
-![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-enable.gif?raw=true)
+![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-enable.gif?raw=true)
 
 ### Scanning a project
 
@@ -55,13 +57,13 @@ Scans are performed based on the default settings. You can change these settings
 
 To exclude files or folders from scanning, use the `.aiignore` file. To create the `.aiignore` file, in the **File** menu, select **New** → **Aiignore file**. The syntax of this file is similar to the `.gitignore` syntax. For more information, see [git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore). You can also use the **SkipGitIgnoreFiles** setting in the `.aiproj.json` file to exclude from scanning files and folders from the `.gitignore` file. By default, this setting is enabled.
 
-![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-aiproj.gif?raw=true)
+![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-aiproj.gif?raw=true)
 
 ### Stopping a scan
 
 To stop a project scan, click **Stop scan** in the **PT Application Inspector** panel or close the progress bar in the bottom toolbar.
 
-![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-stop.gif?raw=true)
+![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-stop.gif?raw=true)
 
 ## Analyzing scan results
 
@@ -85,7 +87,7 @@ The **Exploit** tab contains a test HTTP request that can be used to exploit the
 
 ***Note.** This feature is available in commercial versions of JetBrains IDE.*
 
-![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-exploit.gif?raw=true)
+![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-exploit.gif?raw=true)
 
 Some vulnerabilities have additional exploitation conditions displayed in the **Additional Conditions** tab.
 
@@ -103,7 +105,7 @@ The PT Application Inspector plugin contains a set of tools for managing detecte
 * Confirm, discard, and suppress vulnerabilities in their context menu in the code editor. There you can also perform group actions on all vulnerabilities in the file. For example, click **Confirm vulnerability** → **Fix all code vulnerabilities in the file**.
 * Manage the statuses of several vulnerabilities by selecting them in the **Detected Vulnerabilities** tab and changing the status using the corresponding button.
 
-![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-action.gif?raw=true)
+![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-action.gif?raw=true)
 
 ### Using the assistant
 
@@ -113,15 +115,15 @@ If a large number of vulnerabilities is detected during project scanning, you ca
 * Confirm or discard a group of vulnerabilities similar in type or vulnerable code
 * Review vulnerability statuses assigned manually by the user
 
-![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/assistant_overview
+![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/assistant_overview.gif?raw=true)
 
 You can start the assistant from the pop-up notification that appears when the scan is completed or by clicking the **Assistant** button. You can choose to go through the whole scenario or only certain steps.
 
-![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/assistant_action.gif?raw=true)
+![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/assistant_action.gif?raw=true)
 
 The assistant shows AI-driven recommendations on how to fix detected vulnerabilities.
 
-![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
+![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
 
 How to get a recommendation:
 
@@ -133,13 +135,13 @@ How to get a recommendation:
 
 You can apply the suggested fix or generate an alternative option.
 
-![Assistant AI Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-assistant-copilot-overview.gif?raw=true)
+![Assistant AI Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-assistant-copilot-overview.gif?raw=true)
 
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
 
-![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-compare.gif?raw=true)
+![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-compare.gif?raw=true)
 
 ## Integration with PT AI Enterprise Edition
 
@@ -151,7 +153,7 @@ To configure the integration:
 
 1. Enter the PT AI Enterprise Server address and click **Connect**.
 
-   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-connect.gif?raw=true)
+   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-connect.gif?raw=true)
 
 1. Sign in to PT AI Enterprise Edition using the SSO system you set up.
 
@@ -159,15 +161,15 @@ To configure the integration:
 
     * Upload the source code to PT AI Enterprise Server.
 
-   ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-create-project.gif?raw=true)
+   ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-create-project.gif?raw=true)
 
     * Send a local project for scanning to PT AI Enterprise Server with or without saving the results on the server.
 
-   ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-remote-scan.gif?raw=true)
+   ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-remote-scan.gif?raw=true)
 
     * Synchronize the results of the local scan and the scan in PT AI Enterprise Server.
 
-   ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-map-project.gif?raw=true)
+   ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-map-project.gif?raw=true)
 
 For more information about the integration, see the PT AI Enterprise Edition User Guide.
 
@@ -182,7 +184,7 @@ Branch mapping is needed for the following operations:
 * Sending a local project to PT AI Enterprise Server for scanning
 * Synchronization of vulnerability statuses and scan results
 
-  ![manage branches](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.9.0/media/readme/AI-manage-remote-branch.gif?raw=true)
+  ![manage branches](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-manage-remote-branch.gif?raw=true)
 
 When you switch branches in Git, the plugin automatically switches to a corresponding local branch. If the new local branch is not yet mapped to a PT AI Enterprise Server branch, a notification with the **Select Branch** button is displayed. Before uploading code, syncing artifacts, or running a remote scan, you must select the required branch in PT AI Enterprise Server.
 
