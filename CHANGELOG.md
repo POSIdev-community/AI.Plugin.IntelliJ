@@ -1,3 +1,10 @@
+## [3.0.0]
+- **"How to fix" migration to OpenAI API**: The assistant feature has been updated to support OpenAI-compatible models, replacing the hardcoded YandexGPT integration. You can now use any OpenAI-compatible API, including models available through private proxies or deployed locally (like Ollama or LM Studio), as well as Yandex AI Studio and DeepSeek.
+- **Model Context Protocol (MCP) Integration**: The plugin now supports integration with external AI agents (like Cursor, Claude Desktop, Codex, etc.). AI agents can autonomously trigger scans, fetch scan statuses, list and detail vulnerabilities, and triage issues. All actions performed by the AI agent are instantly reflected in the plugin's UI.
+- **GenAI Code Gates (Security Hooks)**: Added proactive defense mechanism for AI agents. This allows supported AI agents to automatically validate the code they generate by running a local scan before finalizing their answer. Includes the setup of per-turn baselines to optimize scans and mechanisms to prevent infinite loops.
+- **Malicious code module support**: Added support for displaying vulnerabilities detected by the Malicious code module. Similar to Dart and 1C, these vulnerabilities are displayed when you load scan results from PT AI Enterprise Server or run a remote scan. You can also create projects in PT AI Enterprise Server with this module selected.
+- **PT AI Enterprise Edition API 6.3.0**: Added support for PT AI Enterprise Edition API version 6.3.0, ensuring full compatibility with the latest server features.
+
 ## [2.10.0]
 - Added support for PT AI Enterprise Edition API version 6.1.0: the plugin now displays vulnerabilities detected in Dart projects. These vulnerabilities become available after you load the scan results from PT AI Enterprise Server.
 
