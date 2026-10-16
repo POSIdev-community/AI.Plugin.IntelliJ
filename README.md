@@ -2,9 +2,11 @@
 
 The PT Application Inspector plugin finds vulnerabilities and undocumented features in application source code. In addition to code analysis, built-in modules detect errors in configuration files and vulnerabilities in third-party components and libraries used in application development. The plugin supports the following languages: C#, Go, Java, JavaScript, Kotlin, PHP, Python, Ruby, Scala, SQL, Solidity, TypeScript, C/C++, Objective-C, and Swift.
 
-The plugin also partially supports 1C and Dart. You cannot start scans for 1C or Dart projects with the plugin, but you can use the plugin to create PT AI Enterprise Server projects in these languages or load scan results for 1C or Dart projects from PT AI Enterprise Server (the plugin will then display vulnerabilities detected in these projects). The "Hardcoded secrets" and "Vulnerable components and their use" modules are also partially supported. You can use the plugin to create PT AI Enterprise Server projects with these modules, or to load scan results for projects with these modules from PT AI Enterprise Server (the plugin will then display vulnerabilities detected by these modules).
+The plugin also partially supports 1C and Dart. You cannot start scans for 1C or Dart projects with the plugin, but you can use the plugin to create PT AI Enterprise Server projects in these languages or load scan results for 1C or Dart projects from PT AI Enterprise Server (the plugin will then display vulnerabilities detected in these projects).
 
-***Note.** The scanning of projects in C/C++ and Objective-C is not supported in macOS.*
+The "Hardcoded secrets", "Vulnerable components and their use", and "Malicious code detection" modules are also partially supported. You can use the plugin to create PT AI Enterprise Server projects with these modules, or to load scan results from PT AI Enterprise Server (the plugin will then display vulnerabilities detected by these modules).
+
+***Note.** The scanning of projects in C/C++, Objective-C, and Swift is not supported on macOS.*
 
 ## How it works
 
@@ -22,27 +24,29 @@ To manually install the code analyzer:
 
 1. Download the archive with the analyzer using one of the links:
 
-    * For Windows: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/2.10.0.1331/download/AI.INFRASTRUCTURE.INSTALLATOR.2.10.0.1331.zip)
+    * For Windows: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/3.0.0.1494/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.0.1494.zip)
 
-    * For Linux: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/2.10.0.1331/download/AI.INFRASTRUCTURE.INSTALLATOR.2.10.0.1331.tar.gz)
+    * For Linux: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/3.0.0.1494/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.0.1494.tar.gz)
 
-    * For macOS: [download](https://update.ptsecurity.com/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/2.10.0.1331/download/AI.INFRASTRUCTURE.INSTALLATOR.2.10.0.1331.pkg)
+    * For macOS: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/3.0.0.1494/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.0.1494.pkg)
 
-1. In macOS, run the following command to remove the `com.apple.quarantine` attribute:
+2. On macOS, run the following command to remove the `com.apple.quarantine` attribute:
 
-   ```bash
-   xattr -d com.apple.quarantine <analyzer_file_path.pkg>
+```bash
+   xattr -d com.apple.quarantine <analyzer file path.pkg>
    ```
 
-   Then run the installation file and follow the instructions.
+Then run the installation file and follow the instructions.
 
-1. In Windows and Linux, unpack the archive to one of the following locations:
+3. Extract the analyzer archive to one of the following locations:
 
-    * In Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
+    * On Windows: `%LOCALAPPDATA%\Application Inspector Analyzer`
 
-    * In Linux: `~/application-inspector-analyzer`
+    * On Linux: `~/application-inspector-analyzer`
 
-![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-enable.gif?raw=true)
+    * On macOS: `/Library/Application-Inspector-Analyzer`
+
+![AI-enable](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-enable.gif?raw=true)
 
 ### Scanning a project
 
@@ -57,13 +61,13 @@ Scans are performed based on the default settings. You can change these settings
 
 To exclude files or folders from scanning, use the `.aiignore` file. To create the `.aiignore` file, in the **File** menu, select **New** → **Aiignore file**. The syntax of this file is similar to the `.gitignore` syntax. For more information, see [git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore). You can also use the **SkipGitIgnoreFiles** setting in the `.aiproj.json` file to exclude from scanning files and folders from the `.gitignore` file. By default, this setting is enabled.
 
-![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-aiproj.gif?raw=true)
+![Creating the .aiproj.json file](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-aiproj.gif?raw=true)
 
 ### Stopping a scan
 
 To stop a project scan, click **Stop scan** in the **PT Application Inspector** panel or close the progress bar in the bottom toolbar.
 
-![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-stop.gif?raw=true)
+![Stopping a scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-stop.gif?raw=true)
 
 ## Analyzing scan results
 
@@ -83,11 +87,11 @@ For vulnerabilities detected in Solidity applications using the Pygrep core, the
 
 The **Exploit** tab contains a test HTTP request that can be used to exploit the vulnerability in a deployed web application. You can automatically generate an exploit by clicking **Generate Exploit**.
 
-***Note.** To exploit a vulnerability, specify the address of the host where your web application is deployed in the `.aiproj.json` file. The default value is "localhost."*
+***Note**. To exploit a vulnerability, specify the address of the host where your web application is deployed in the `.aiproj.json` file. The default value is "localhost."*
 
-***Note.** This feature is available in commercial versions of JetBrains IDE.*
+***Note**. This feature is available in commercial versions of JetBrains IDE.*
 
-![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-exploit.gif?raw=true)
+![Vulnerability exploitation](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-exploit.gif?raw=true)
 
 Some vulnerabilities have additional exploitation conditions displayed in the **Additional Conditions** tab.
 
@@ -102,46 +106,100 @@ Several vulnerabilities can have the same exit point. If these vulnerabilities b
 The PT Application Inspector plugin contains a set of tools for managing detected vulnerabilities. With these tools, you can do the following:
 * Filter vulnerabilities by severity, status, and suppression from scan results by clicking the eye button.
 * Confirm and discard vulnerabilities by clicking **Confirm** or **Discard** on the **[PT AI] Vulnerability Details** panel.
-* Confirm, discard, and suppress vulnerabilities in their context menu in the code editor. There you can also perform group actions on all vulnerabilities in the file. For example, click **Confirm vulnerability** → **Fix all code vulnerabilities in the file**.
+* Confirm, discard, and suppress vulnerabilities in their context menu in the code editor. There you can also perform group actions on all vulnerabilities in the file. For example, click **Confirm vulnerability** → **Fix all 'Vulnerable Code' problems in file**.
 * Manage the statuses of several vulnerabilities by selecting them in the **Detected Vulnerabilities** tab and changing the status using the corresponding button.
 
-![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-action.gif?raw=true)
+![Confirming vulnerabilities](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-action.gif?raw=true)
 
 ### Using the assistant
 
-If a large number of vulnerabilities is detected during project scanning, you can sort them out much faster using the assistant function. The assistant gives recommendations in the following order:
+If a large number of vulnerabilities is detected during project scanning, you can sort them out much faster using the assistant. The assistant gives recommendations in the following order:
 * Confirm vulnerabilities that have an exploit
 * Discard vulnerabilities with a detected filtering function
 * Confirm or discard a group of vulnerabilities similar in type or vulnerable code
-* Review vulnerability statuses assigned manually by the user
+* Review manually assigned vulnerability statuses
 
-![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/assistant_overview.gif?raw=true)
+![Assistant Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/assistant_overview.gif?raw=true)
 
 You can start the assistant from the pop-up notification that appears when the scan is completed or by clicking the **Assistant** button. You can choose to go through the whole scenario or only certain steps.
 
-![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/assistant_action.gif?raw=true)
+![Assistant Action](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/assistant_action.gif?raw=true)
 
 The assistant shows AI-driven recommendations on how to fix detected vulnerabilities.
 
-![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
+![Assistant AI Quick Fix](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-assistant-copilot-quick-fix.gif?raw=true)
 
 How to get a recommendation:
 
 1. Select a vulnerability on the **Detected Vulnerabilities** tab or by clicking **Suggest fix** in the code editor context menu.
 
-1. Select the **How to Fix** tab.
+2. Select the **How to Fix** tab.
 
-1. Click **Create**.
+3. Click **Create**.
 
 You can apply the suggested fix or generate an alternative option.
 
-![Assistant AI Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-assistant-copilot-overview.gif?raw=true)
+***Note.** Recommendations can be generated for all vulnerabilities except those excluded from scan results, discarded, or belonging to the SCA, Weakness, or MaliciousCode class.*
+
+![Assistant AI Overview](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-assistant-copilot-overview.gif?raw=true)
 
 ### Comparing scan results
 
 You can compare results of two scans within a project. To do this, in the **Scan History** tab, in the context menu of the first scan, select **Compare with**, and then select the second scan.
 
-![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-compare.gif?raw=true)
+![Comparing two scan results within a single project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-compare.gif?raw=true)
+
+## Integration with AI agents
+
+The PT Application Inspector plugin supports integration with external AI agents (such as Cursor, Claude Desktop, and Windsurf) via the Model Context Protocol (MCP). Integration allows agents installed on your computer to work directly with scan results: request a list of detected vulnerabilities, review vulnerability details (data-flow diagrams and additional exploitation conditions), confirm or discard vulnerabilities, or start scans. This saves you from having to manually copy vulnerability descriptions into the agent chat. You can ask the agent to find and fix vulnerabilities, and it will analyze the scan results and suggest code changes. All agent actions, such as starting a scan or changing a vulnerability status, are immediately reflected in the plugin interface. You see them directly in the IDE while communicating with the agent.
+
+![Integration with AI Agents](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-mcp-scan.gif?raw=true)
+
+### Connecting an AI agent
+
+To connect an AI agent:
+
+1. In the IntelliJ IDEA main menu, click **Tools** → **PT Application Inspector** → **Connect to AI Agent**.
+
+2. In the window that opens, select installed AI agents you want to connect to.
+
+   For unsupported agents, click the **Custom agent** checkbox to generate a markdown file named `PT_AI_Custom_Agent_Setup.md`, which contains setup instructions, a manual configuration snippet, and a system prompt.
+
+3. In the **Enable AI hooks for** window, select agents that you want to enable automatic security checks for.
+
+   The plugin will automatically configure the MCP server and AI hooks for the selected agents.
+
+***Note.** If the plugin detects an installed AI agent when you launch IntelliJ IDEA, and the agent's configuration does not yet include an MCP server, a notification appears prompting you to configure it. The notification is shown once per IDE session. You can disable it permanently by clicking the **Don't Show Again** button.*
+
+### Standalone MCP installer
+
+If you do not use an IDE, you can install an MCP server as a standalone npm package `@posidev-community/ptai-mcp`. This is helpful if you work with terminal AI agents (such as Claude Code or Codex CLI) outside an IDE or want to integrate scanning into headless environments.
+
+This package requires Node.js 18 or later.
+
+To install an MCP server in standalone mode,
+
+1. Run the following command in the terminal:
+
+   ```
+   npx -y @posidev-community/ptai-mcp install
+   ```
+
+### AI hooks (GenAI Code Gates)
+
+AI hooks provide proactive protection. An AI agent must check the code it generates with a local analyzer before issuing a final response. A hook is triggered when the agent finishes generating a response. An incremental scan starts automatically, and the agent receives a summary of the results, including the number of detected vulnerabilities broken down by severity and a list of affected files. If any of the files were modified by the agent, it requests details and fixes the vulnerabilities following a cycle: generated → checked → fixed.
+
+To save time and resources, the plugin takes a snapshot of the project files before running the agent. If no files have been changed by the time the response is complete, the scan is skipped.
+
+You can manage hooks for each project individually.
+
+To disable hooks for the current project,
+
+1. In the IntelliJ IDEA main menu, click **Tools** → **PT Application Inspector** → **Disable AI Hooks for This Project**.
+
+To enable hooks,
+
+1. In the IntelliJ IDEA main menu, click **Tools** → **PT Application Inspector** → **Enable AI Hooks for This Project**.
 
 ## Integration with PT AI Enterprise Edition
 
@@ -151,25 +209,25 @@ To configure the integration:
 
 1. In the IntelliJ IDEA main menu, click **Tools** → **PT Application Inspector** → **Connect to PT AI Server**.
 
-1. Enter the PT AI Enterprise Server address and click **Connect**.
+2. Enter the PT AI Enterprise Server address and click **Connect**.
 
-   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-connect.gif?raw=true)
+   ![connect to server](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-connect.gif?raw=true)
 
-1. Sign in to PT AI Enterprise Edition using the SSO system you set up.
+3. Sign in to PT AI Enterprise Edition using the SSO system you set up.
 
-1. Perform the required integration scenario:
+4. Perform the required integration scenario:
 
     * Upload the source code to PT AI Enterprise Server.
 
-   ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-create-project.gif?raw=true)
+   ![create AIE project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-create-project.gif?raw=true)
 
     * Send a local project for scanning to PT AI Enterprise Server with or without saving the results on the server.
 
-   ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-remote-scan.gif?raw=true)
+   ![start remote scan](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-remote-scan.gif?raw=true)
 
     * Synchronize the results of the local scan and the scan in PT AI Enterprise Server.
 
-   ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-map-project.gif?raw=true)
+   ![map project](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-map-project.gif?raw=true)
 
 For more information about the integration, see the PT AI Enterprise Edition User Guide.
 
@@ -184,7 +242,7 @@ Branch mapping is needed for the following operations:
 * Sending a local project to PT AI Enterprise Server for scanning
 * Synchronization of vulnerability statuses and scan results
 
-  ![manage branches](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/2.10.0/media/readme/AI-manage-remote-branch.gif?raw=true)
+  ![manage branches](https://github.com/POSIdev-community/AI.Plugin.IntelliJ/blob/release/3.0.0/media/readme/AI-manage-remote-branch.gif?raw=true)
 
 When you switch branches in Git, the plugin automatically switches to a corresponding local branch. If the new local branch is not yet mapped to a PT AI Enterprise Server branch, a notification with the **Select Branch** button is displayed. Before uploading code, syncing artifacts, or running a remote scan, you must select the required branch in PT AI Enterprise Server.
 
@@ -219,11 +277,12 @@ The plugin configuration page contains the following sections of settings.
 * **Show recommendations on the Quick Fix menu**. Displays tips from the assistant. By default, this setting is enabled.
 * The number of vulnerabilities to be confirmed or discarded starting from which a notification from the assistant will be displayed. The default value is 5.
 * The number of similar vulnerabilities starting from which a notification from the assistant will be displayed. The default value is 5.
-* **Suggest vulnerability fixes**. Show the **How to Fix** tab with vulnerability fix recommendations. The section contains settings for the YandexGPT network:
+* **Suggest vulnerability fixes**. Show the **How to Fix** tab with vulnerability fix recommendations. The section contains settings for an AI provider:
+    * Provider type (YandexGPT, OpenAI, DeepSeek, OpenRouter, Custom / Local)
+    * API key
+    * Destination URL (for Custom / Local providers)
     * Model name
-    * OAuth token for Yandex Cloud
-    * ID of the Yandex Cloud directory for which your account has the `ai.languageModels.user` role
-    * Temperature: a value from 0 to 1, which defines the model response variability (the higher the value, the more unpredictable the query output)
+    * Temperature: a value from 0 to 2 (0–1 for YandexGPT), which defines the model response variability (the higher the value, the less predictable the query output)
     * Maximum number of tokens in one recommendation (the number of tokens in the same text may vary between models)
 
 ## Requirements
@@ -252,7 +311,7 @@ If you have any questions about the plugin, follow the links in the **Help & Fee
 
 ## Privacy statement
 
-By default, the PT Application Inspector plugin collects anonymous telemetry.  This allows our specialists to improve the stability and performance of the product. They can optimize resource consumption and speed up scanning, find and fix errors across different IDE versions more quickly, and understand which features are used most often to improve the user experience.
+By default, the PT Application Inspector plugin collects anonymous telemetry. This allows our specialists to improve the stability and performance of the product. They can optimize resource consumption and speed up scanning, find and fix errors across different IDE versions more quickly, and understand which features are used most often to improve the user experience.
 
 Only technical metrics (interaction events, environment settings, and the main scanning settings) for the plugin and IDE are sent. Source code, credentials, tokens, and project contents are completely excluded. All data is transmitted over a secure HTTPS channel, processed anonymously, and not shared with third parties. It does not contain any confidential information.
 
