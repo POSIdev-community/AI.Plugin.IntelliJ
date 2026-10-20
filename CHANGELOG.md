@@ -1,3 +1,7 @@
+## [3.0.1]
+- Fixed telemetry collection bug.
+- Fixed MCP connection failures during long-running scans.
+
 ## [3.0.0]
 - **"How to fix" migration to OpenAI API**: The assistant feature has been updated to support OpenAI-compatible models, replacing the hardcoded YandexGPT integration. You can now use any OpenAI-compatible API, including models available through private proxies or deployed locally (like Ollama or LM Studio), as well as Yandex AI Studio and DeepSeek.
 - **Model Context Protocol (MCP) Integration**: The plugin now supports integration with external AI agents (like Cursor, Claude Desktop, Codex, etc.). AI agents can autonomously trigger scans, fetch scan statuses, list and detail vulnerabilities, and triage issues. All actions performed by the AI agent are instantly reflected in the plugin's UI.
