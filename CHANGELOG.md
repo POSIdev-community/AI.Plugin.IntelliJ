@@ -1,3 +1,9 @@
+## [3.1.0]
+
+- Added support for PT AI Enterprise Edition API 6.4.0 and displaying race condition vulnerabilities.
+- Improved synchronization with PT AI Enterprise Server: missed updates to scan progress, results, vulnerability statuses, and permissions are recovered after temporary network outages.
+- Minor UX improvements and bug fixes in vulnerability details and server integration.
+
 ## [3.0.1]
 - Fixed telemetry collection bug.
 - Fixed MCP connection failures during long-running scans.
