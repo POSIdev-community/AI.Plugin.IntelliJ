@@ -24,11 +24,11 @@ To manually install the code analyzer:
 
 1. Download the archive with the analyzer using one of the links:
 
-    * For Windows: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/3.0.1.1505/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.1.1505.zip)
+    * For Windows: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.zip/3.1.0.1604/download/AI.INFRASTRUCTURE.INSTALLATOR.3.1.0.1604.zip)
 
-    * For Linux: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/3.0.1.1505/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.1.1505.tar.gz)
+    * For Linux: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.tar.gz/3.1.0.1604/download/AI.INFRASTRUCTURE.INSTALLATOR.3.1.0.1604.tar.gz)
 
-    * For macOS: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/3.0.1.1505/download/AI.INFRASTRUCTURE.INSTALLATOR.3.0.1.1505.pkg)
+    * For macOS: [download](https://update.ptsecurity.ru/api/v6/products/AI.INFRASTRUCTURE.INSTALLATOR.pkg/3.1.0.1604/download/AI.INFRASTRUCTURE.INSTALLATOR.3.1.0.1604.pkg)
 
 2. On macOS, run the following command to remove the `com.apple.quarantine` attribute:
 
